@@ -15,6 +15,18 @@ public class Product {
         return this.price;
     }
     
+    public int getLength() {
+        return dimensions.getLength();
+    }
+
+    public int getWidth() {
+        return dimensions.getWidth();
+    }
+
+    public int getHeight() {
+        return dimensions.getHeight();
+    }
+
     public int getVolume() {
         return this.dimensions.getVolume();
     }
