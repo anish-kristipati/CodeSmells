@@ -30,8 +30,8 @@ public class Runner {
         loginService.resetPassword(user);
 
         // Report Generation
-        String inventoryReport = reportGenerator.generateInventoryReport(inventoryManager);
-        String salesReport = reportGenerator.generateSalesReport(orderProcessor);
+        String inventoryReport = inventoryManager.generateInventoryReport();
+        String salesReport = orderProcessor.generateSalesReport();
 
         // Output reports
         System.out.println(inventoryReport);

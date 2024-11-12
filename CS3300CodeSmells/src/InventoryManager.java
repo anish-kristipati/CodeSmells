@@ -16,4 +16,12 @@ public class InventoryManager {
     public Map<String, Integer> getInventory() {
         return inventory;
     }
+
+    public String generateInventoryReport() {
+        StringBuilder report = new StringBuilder("Inventory Report:\n");
+        for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
+            report.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+        return report.toString();
+    }
 }
