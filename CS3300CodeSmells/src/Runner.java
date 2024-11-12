@@ -14,9 +14,9 @@ public class Runner {
         User user = new User("Alice", "alice@example.com", "password123");
 
         // Inventory Management
-        inventoryManager.manageInventory("add", "Watch", 10);
-        inventoryManager.manageInventory("add", "Gadget", 50);
-        inventoryManager.manageInventory("add", "Lamp", 25);
+        inventoryManager.manageInventory(new AddAction(), "Watch", 10);
+        inventoryManager.manageInventory(new AddAction(), "Gadget", 50);
+        inventoryManager.manageInventory(new AddAction(), "Lamp", 25);
 
         // Order Processing
         Order order = new Order("10");
@@ -41,4 +41,3 @@ public class Runner {
         loginService.logout(user);
     }
 }
-
