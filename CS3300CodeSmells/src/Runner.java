@@ -3,9 +3,10 @@ public class Runner {
         // Instantiate the classes
         InventoryManager inventoryManager = new InventoryManager();
         OrderProcessor orderProcessor = new OrderProcessor();
-
-        Product product1 = new Product("Gadget", 10, 5, 3, 3.30, "Gadgets Inc", "123 Gadget Lane");
-        Product product2 = new Product("Watch", 1, 3, 2, 5.30, "Watches Inc", "123 Watches Lane");
+        Manufacturer gadgets = new Manufacturer("Gadgets Inc", "123 Gadget Lane");
+        Manufacturer watch = new Manufacturer("Watches Inc", "123 Watches Lane");
+        Product product1 = new Product("Gadget", 10, 5, 3, 3.30, gadgets);
+        Product product2 = new Product("Watch", 1, 3, 2, 5.30, watch);
         Customer customer = new Customer("John Doe", "123 Main St", new String[]{"Order1", "Order2"}, 100);
 
         ReportGenerator reportGenerator = new ReportGenerator();
