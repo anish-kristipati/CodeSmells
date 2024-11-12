@@ -8,8 +8,6 @@ public class Runner {
         Product product2 = new Product("Watch", 1, 3, 2, 5.30, "Watches Inc", "123 Watches Lane");
         Customer customer = new Customer("John Doe", "123 Main St", new String[]{"Order1", "Order2"}, 100);
 
-        ReportGenerator reportGenerator = new ReportGenerator();
-
         LoginService loginService = new LoginService();
         User user = new User("Alice", "alice@example.com", "password123");
 
