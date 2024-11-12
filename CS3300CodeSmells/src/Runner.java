@@ -3,10 +3,16 @@ public class Runner {
         // Instantiate the classes
         InventoryManager inventoryManager = new InventoryManager();
         OrderProcessor orderProcessor = new OrderProcessor();
+        
         Manufacturer gadgets = new Manufacturer("Gadgets Inc", "123 Gadget Lane");
         Manufacturer watch = new Manufacturer("Watches Inc", "123 Watches Lane");
-        Product product1 = new Product("Gadget", 10, 5, 3, 3.30, gadgets);
-        Product product2 = new Product("Watch", 1, 3, 2, 5.30, watch);
+
+        Dimensions gadgetDimensions = new Dimensions(10, 5, 3);
+        Dimensions watchDimensions = new Dimensions(1, 3, 2);
+
+        Product product1 = new Product("Gadget", gadgetDimensions, 3.30, gadgets);
+        Product product2 = new Product("Watch", watchDimensions, 5.30, watch);
+
         Customer customer = new Customer("John Doe", "123 Main St", new String[]{"Order1", "Order2"}, 100);
 
         LoginService loginService = new LoginService();
