@@ -1,18 +1,38 @@
 import java.util.HashMap;
 import java.util.Map;
 
+interface InventoryAction {
+    void execute(Map<String, Integer> inventory, String item, int quantity);
+}
+
+class AddAction implements InventoryAction {
+    @Override
+    public void execute(Map<String, Integer> inventory, String item, int quantity) {
+        inventory.put(item, inventory.getOrDefault(item, 0) + quantity);
+    }
+}
+
+class DeleteAction implements InventoryAction {
+    @Override
+    public void execute(Map<String, Integer> inventory, String item, int quantity) {
+        inventory.remove(item);
+    }
+}
+
+class UpdateAction implements InventoryAction {
+    @Override
+    public void execute(Map<String, Integer> inventory, String item, int quantity) {
+        inventory.put(item, quantity);
+    }
+}
+
 public class InventoryManager {
     private Map<String, Integer> inventory = new HashMap<>();
 
-    public void manageInventory(String action, String item, int quantity) {
-        if (action.equals("add")) {
-            inventory.put(item, inventory.getOrDefault(item, 0) + quantity);
-        } else if (action.equals("delete")) {
-            inventory.remove(item);
-        } else if (action.equals("update")) {
-            inventory.put(item, quantity);
-        }
+    public void manageInventory(InventoryAction action, String item, int quantity) {
+        action.execute(inventory, item, quantity);
     }
+
     public Map<String, Integer> getInventory() {
         return inventory;
     }
@@ -24,4 +44,5 @@ public class InventoryManager {
         }
         return report.toString();
     }
+
 }
