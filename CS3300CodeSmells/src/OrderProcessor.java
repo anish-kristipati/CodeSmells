@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class OrderProcessor {
 
@@ -28,4 +29,20 @@ public class OrderProcessor {
     }
 
     public HashMap<Order,Customer> getOrders() { return orders;}
+
+    public String generateSalesReport() {
+
+        StringBuilder report = new StringBuilder("Sales Report:\n");
+
+        for (Map.Entry<Order, Customer> entry : orders.entrySet()) {
+            Order order = entry.getKey();
+            Customer customer = entry.getValue();
+            report.append("Order ID: ").append(order.getId())
+                    .append(", Customer: ").append(customer.getName())
+                    .append(", Total Cost: ").append(order.getTotalCost())
+                    .append("\n");
+        }
+
+        return report.toString();
+    }
 }
