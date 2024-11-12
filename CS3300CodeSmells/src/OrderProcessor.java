@@ -21,7 +21,7 @@ public class OrderProcessor {
     }
 
     private void processPayment(Order order, Customer customer) {
-        customer.setIncome((int) (customer.getIncome() - order.getTotalCost()));
+       customer.processPayment(order.getTotalCost());
     }
 
     private void addToOrders(Order order, Customer customer) {

@@ -12,6 +12,10 @@ public class Customer {
         this.income = income;
     }
 
+
+    public void processPayment(double amount) {
+        this.income -= (int)amount;
+    }
     public int getIncome() {return income;}
 
     public void setIncome(int income) {this.income = income;}
